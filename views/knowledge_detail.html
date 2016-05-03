@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全网统一知识库</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../css/knowledge_detail.css"/>
+    <!--<link rel="stylesheet" href="../css/knowledge_detail2.css"/>-->
+    <script type="text/javascript" src="../js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.exedit-3.5.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.excheck-3.5.js"></script>
+
+    <!--UEditor-->
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/editor.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/knowledge_tpl_config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/knowledge_content.js"></script>
+    <script src="../js/knowledge_content_level.js"></script>
+</head>
+<body>
+<div id="kba_page" style="width:100%;height: auto;">
+    <input type="hidden" id="per_editor"/>
+    <div id="Top" class="clear">
+        <ul class="headerList clearfix">
+            <li class="home"><a href="javascript:;">首页</a></li>
+            <li class="myWork"><a href="javascript:;">我的工作</a></li>
+            <li class="knowledgeList"><a href="javascript:;" id="addList" onclick="readTree()">知识列表</a></li>
+            <li class="orderList"><a href="javascript:;" id="templateList" onclick="templateRead()">工单列表</a></li>
+            <li class="feedback"><a href="javascript:;">反馈列表</a></li>
+            <li class="statisticalQuery"><a href="javascript:;">统计查询</a></li>
+            <li class="manageCenter"><a href="javascript:;">管理中心</a></li>
+        </ul>
+        <div class="headerSearch clearfix">
+            <input   name=""  type="text" value="" placeholder="">
+            <a class="searchBtn"  name="" href="javascript:;"></a>
+        </div>
+        <div class="login_user">
+            <a href="javascript:;" id="logout_hover" class="fl">您好,admin</a>
+            <a href="javascript:;" name="loginOut" class="fl">退出</a>
+            <input type="hidden" id="userCity" value="<?php echo CHtml::encode(Yii::app()->session['uprovince']);?>">
+        </div>
+        <div class="clears"></div>
+    </div>
+    <div id="Cen clear">
+        <div id="Left">
+            <div class="left_to">我的工作台</div>
+            <div class="content_wrap" style="overflow-y: scroll;overflow-x: hidden;">
+                <div class="zTreeDemoBackground left" >
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+            <div id="rMenu" >
+                <ul>
+                    <li id="add_module" onclick="addModule();">添加模块</li>
+                    <li id="add_ken" onclick="addTreeNode();">新增知识点</li>
+                    <li id="m_add_folder" onclick="addFolder();">增加文件夹</li>
+                    <li id="del_ken" onclick="removeTreeNode();">删除节点</li>
+                    <li id="m_rename" onclick="renameTreeNode();">重命名</li>
+                </ul>
+            </div>
+        </div>
+        <div id="Right" style="height: auto;">
+            <input type="hidden" id="hidden_path" value="">
+            <input type="hidden" id="hidden_name" value="">
+            <input type="hidden" id="hidden_level" value="<?php echo CHtml::encode(Yii::app()->session['ulevel']); ?>">
+            <div class="tit" id="breadcrumb"></div>
+            <div class="center" id="Cen" style="height: auto;">
+                <div class="rightMain_con" style="height: auto;">
+                    <div class="knowledgeCon">
+                    </div>
+                </div>
+            </div>
+            <div class="clears"></div>
+        </div>
+        <div class="clears"></div>
+    </div>
+    <!--新建模板弹框-->
+    <div id="creatMb_pop" class="hide creatPop">
+        <div class="add_main">
+            <div class="add">
+               <div class="title">
+                   <h3>选择模版</h3>
+                   <span class="popClose">×</span>
+               </div>
+                <div class="cont">
+                   <div class="cont_warp">
+                       <!--<input type="text" id="add_name" placeholder="新建模板名称" />-->
+                       <select name="" id="chose_mb">
+                           <option value="0">业务类</option>
+                           <option value="1">套餐</option>
+                           <option value="2">营销活动</option>
+                       </select>
+                       <p id="creatNewMb">
+                           <a >新建模板</a>
+                       </p>
+                   </div>
+                    <button class="nextBtn" id="creatMbNextBtn">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div >
+    <!--新建知识点-->
+    <div id="creatKen_pop" class="hide creatPop">
+        <div class="add_main">
+            <div class="add">
+                <div class="title">
+                    <h3>新增知识点</h3>
+                    <span class="popClose">×</span>
+                </div>
+                <div class="cont">
+                    <div class="cont_warp">
+                        <input type="text" id="add_kb" placeholder="新建知识点名称" />
+                        <select name="" id="chose_kb">
+                            <option value="业务类">业务类</option>
+                            <option value="套餐">套餐</option>
+                            <option value="营销活动">营销活动</option>
+                        </select>
+                    </div>
+                    <button class="nextBtn" id="creatKenNextBtn">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div >
+    <!--输入编辑知识点理由-->
+    <div id="editReason_pop" class="hide creatPop">
+        <div class="add_main">
+            <div class="add">
+                <div class="title">
+                    <h3>编辑知识点理由</h3>
+                    <span class="popClose">×</span>
+                </div>
+                <div class="cont">
+                    <div class="cont_warp" style="margin: 10px 130px 0px 50px;width: 500px;">
+                        知识点名称：<span id="kb_nodename"></span><br/>
+                        <span style="display:block; float: left;">知识点描述：</span><textarea id="edit_reason" name="edit_reason" placeholder="请输入编辑知识点理由" rows="10" cols="50" style="padding:5px;float:left;"></textarea>
+                    </div>
+                    <button class="nextBtn" id="editReasonNextBtn" style="margin-left: 200px;">开始更新</button>
+                </div>
+            </div>
+        </div>
+    </div >
+    <div class="clears"></div>
+</div>
+</body>
+<script src="../js/knowledge_detail.js"></script>
+</html>

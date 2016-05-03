@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全网统一知识库</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../css/knowledge_detail_demo.css"/>
+    <!--<link rel="stylesheet" href="../css/knowledge_detail2.css"/>-->
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.exedit-3.5.js"></script>
+    <script type="text/javascript" src="../js/ztree/jquery.ztree.excheck-3.5.js"></script>
+
+    <!--UEditor-->
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/UEditor/editor.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/tpl_config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/content.js"></script>
+</head>
+<body>
+<div id="kba_page" style="width:100%;height: auto;">
+    <input type="hidden" id="per_editor"/>
+    <div id="Top" class="clear">
+        <!--<div class="kba_header_logo">-->
+            <!--<img src="../images/logo_icon.png" alt="logo">-->
+            <!--<h1>首页</h1>-->
+            <!--<div class="clears"></div>-->
+        <!--</div>-->
+        <ul class="headerList clearfix">
+            <li class="home"><a href="javascript:;">首页</a></li>
+            <li class="myWork"><a href="javascript:;">我的工作</a></li>
+            <li class="knowledgeList"><a href="javascript:;">知识列表</a></li>
+            <li class="orderList"><a href="javascript:;">工单列表</a></li>
+            <li class="feedback"><a href="javascript:;">反馈列表</a></li>
+            <li class="statisticalQuery"><a href="javascript:;">统计查询</a></li>
+            <li class="manageCenter"><a href="javascript:;">管理中心</a></li>
+        </ul>
+        <div class="headerSearch clearfix">
+            <input   name=""  type="text" value="" placeholder="">
+            <a class="searchBtn"  name="" href="javascript:;"></a>
+        </div>
+        <div class="login_user">
+            <a href="javascript:;" id="logout_hover" class="fl">您好,admin</a>
+            <a href="javascript:;" name="loginOut" class="fl">退出</a>
+            <input type="hidden" id="userCity" value="<?php echo CHtml::encode(Yii::app()->session['uprovince']);?>">
+        </div>
+        <div class="clears"></div>
+    </div>
+    <div id="Cen clear">
+        <div id="Left">
+            <div class="left_to">我的工作台</div>
+            <div class="content_wrap">
+                <div class="zTreeDemoBackground left">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+            <div id="rMenu" style="">
+                <ul>
+                    <li id="add_module" onclick="addModule();">批量添加模块</li>
+                    <li id="add_ken" onclick="addTreeNode();">新增知识点</li>
+                    <li id="m_add_folder" onclick="addFolder();">增加文件夹</li>
+                    <li id="del_ken" onclick="removeTreeNode();">删除节点</li>
+                    <li id="m_rename" onclick="renameTreeNode();">重命名</li>
+                </ul>
+            </div>
+        </div>
+        <div id="Right" style="height: auto;">
+            <input type="hidden" id="hidden_path" value="">
+            <input type="hidden" id="hidden_name" value="">
+            <input type="hidden" id="hidden_level" value="<?php echo CHtml::encode(Yii::app()->session['ulevel']); ?>">
+            <div class="tit" id="breadcrumb"></div>
+            <div class="operationListWrap clearfix">
+                <a href="javascript:;" class="back fl blue_btn"><img src="../images/back_icon.png"/> 返回</a>
+                <div class="fr">
+                    <button class="submit orange_btn">提交</button>
+                    <button class="cancle grey_btn">取消</button>
+                </div>
+
+            </div>
+            <div class="center" id="Cen" style="height: auto;">
+                <div class="rightMain_con" style="height: auto;">
+                    <div class="knowledgeCon">
+                        <!--<div class="knowledgeCon_tit clearfix">
+                            <div class="choseCity clearfix">
+                                <div class="customSel">
+                                    <div class="customSelTit province">
+                                        <span class="choseVal">全国统一</span>
+                                        <a href="javascript:;" class="choseBtn"></a>
+                                    </div>
+                                    <ul class="customSelList"></ul>
+                                </div>
+                                <div class="customSel">
+                                    <div class="customSelTit city">
+                                        <span class="choseVal"></span>
+                                        <a href="javascript:;" class="choseBtn"></a>
+                                    </div>
+                                    <ul class="customSelList"></ul>
+                                </div>
+                            </div>
+                        </div>-->
+
+                      <!--  <div class="nodeOneListWrap">
+                            <ul class="nodeOneList">
+                                <li key="业务介绍">
+                                    <div class="icon">
+                                        <img src="../images/b_introduce.png" alt=""/>
+                                    </div>
+                                    <p class="name">业务介绍</p>
+                                </li>
+                                <li key="业务资费">
+                                    <div class="icon">
+                                        <img src="../images/b_postage.png" alt=""/>
+                                    </div>
+                                    <p class="name">业务资费</p>
+                                </li>
+                                <li key="业务办理">
+                                    <div class="icon">
+                                        <img src="../images/b_handle.png" alt=""/>
+                                    </div>
+                                    <p class="name">业务办理</p>
+                                </li>
+                                <li key="业务使用">
+                                    <div class="icon">
+                                        <img src="../images/b_use.png" alt=""/>
+                                    </div>
+                                    <p class="name">业务使用</p>
+                                </li>
+                                <li key="内部知晓">
+                                    <div class="icon">
+                                        <img src="../images/b_know.png" alt=""/>
+                                    </div>
+                                    <p class="name">内部知晓</p>
+                                </li>
+
+                            </ul>
+                        </div>-->
+                      <!-- <div class="knowledgeCon_cont">
+                            <div class="knowledgeCon_cont_main ">
+                                <div class="clearfix knowledgeCon_cont_mainHead twoLevel">
+                                    <div class="fl cont_mainHead"><span class="h_icon"></span><b>二级</b></div>
+                                </div>
+                            </div>
+                            <div class="knowledgeCon_cont_main ">
+                                <div class="clearfix knowledgeCon_cont_mainHead threeLevel">
+                                    <div class="fl cont_mainHead"><span class="h_icon"></span><b>三级</b></div>
+                                </div>
+                            </div>
+                            <div class="knowledgeCon_cont_main ">
+                                <div class="clearfix knowledgeCon_cont_mainHead fourLevel">
+                                    <div class="fl cont_mainHead"><span class="h_icon"></span><b>四级</b></div>
+                                    <a class="fl copyBtn" href="javascript:;"></a>
+                                    <div class="choseArea clearfix fl">
+                                        <div class="customSel">
+                                            <div class="customSelTit province">
+                                                <span class="choseVal"></span>
+                                                <a href="javascript:;" class="choseBtn"></a>
+                                            </div>
+                                            <ul class="customSelList"></ul>
+                                        </div>
+                                        <div class="customSel">
+                                            <div class="customSelTit city">
+                                                <span class="choseVal"></span>
+                                                <a href="javascript:;" class="choseBtn"></a>
+                                            </div>
+                                            <ul class="customSelList"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="oper_tit fr">
+                                        渠道
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="editorWrap">
+                                <div class="editorConWrap">
+                                    <div class="editorCon">
+                                        <div class="editor">编辑器</div>
+                                    </div>
+                                </div>
+                                <p class="operation">
+                                    <span class="weixinIcon"></span>
+                                    <span class="timeIcon"></span>
+                                    <span class="mapIcon"></span>
+                                    <span class="pcIcon"></span>
+                                    <span class="megIcon"></span>
+                                    <span class="fetionIcon"></span>
+                                </p>
+                            </div>
+                            <div class="operationBtn">
+                                <a class="previewHtmlBtn blue_btn"><img src="../images/preview.png"/>预览</a>
+                                <a class="saveHtmlBtn blue_btn"><img src="../images/save.png"/>保存</a>
+                                <a class="pushHtmlBtn blue_btn"><img src="../images/push.png"/>发布</a>
+                            </div>
+                        </div>-->
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="clears"></div>
+        </div>
+        <div class="clears"></div>
+    </div>
+    <!--新建模板弹框-->
+    <div id="creatMb_pop" class="hide creatPop">
+        <div class="add_main">
+            <div class="add">
+               <div class="title">
+                   <h3>选择模版</h3>
+                   <span class="popClose">×</span>
+               </div>
+                <div class="cont">
+                   <div class="cont_warp">
+                       <!--<input type="text" id="add_name" placeholder="新建模板名称" />-->
+                       <select name="" id="chose_mb">
+                           <option value="业务类">业务类</option>
+                           <option value="套餐">套餐</option>
+                           <option value="营销活动">营销活动</option>
+                       </select>
+                       <p id="creatNewMb">
+                           <a >新建模板</a>
+                       </p>
+                   </div>
+                    <button class="nextBtn" id="creatMbNextBtn">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div >
+    <!--新建知识点-->
+    <div id="creatKen_pop" class="hide creatPop">
+        <div class="add_main">
+            <div class="add">
+                <div class="title">
+                    <h3>新增知识点</h3>
+                    <span class="popClose">×</span>
+                </div>
+                <div class="cont">
+                    <div class="cont_warp">
+                        <input type="text" id="add_kb" placeholder="新建知识点名称" />
+                        <select name="" id="chose_kb">
+                            <option value="业务类">业务类</option>
+                            <option value="套餐">套餐</option>
+                            <option value="营销活动">营销活动</option>
+                        </select>
+                    </div>
+                    <button class="nextBtn" id="creatKenNextBtn">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div >
+    <div class="clears"></div>
+</div>
+</body>
+<script src="../js/knowledge_detail_demo.js"></script>
+</html>

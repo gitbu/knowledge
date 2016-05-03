@@ -1,0 +1,309 @@
+.clears { clear:both;height:0; }
+.clearfix:after { content:".";display:block;height:0;clear:both;visibility:hidden }
+.clearfix { *+height:1% }
+#Right .rightMain_con{
+    border-left:1px solid #e5e5e5;
+    margin-right:-1px;
+}
+.rightMain_con{
+    padding:0
+}
+.creatPop{
+    background: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+}
+.creatPop button{
+    border-radius:5px;
+    background:#3388ff ;
+    color:#ffffff;
+    margin:9px 0 9px 12px;
+    padding:4px 10px;
+}
+.creatPop {
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.creatPop .add {
+    background-color: #fff;
+    left:50%;
+    position: absolute;
+    top:50%;
+    margin-top:-158px;
+    margin-left: -268px;
+    height: 316px;
+    width: 536px;
+}
+.creatPop .add_main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.creatPop .add .title{
+    border-bottom: 1px solid #3388ff;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px;
+   position: relative;
+}
+.creatPop .add .title h3{
+    text-align: left;
+}
+.creatPop .add .title .popClose{
+    color: #858585;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 20px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+.creatPop .add .cont {
+    min-height: 100px;
+    padding: 20px;
+}
+.creatPop .add .cont .cont_warp{
+    width:248px;
+    margin:46px 130px 10px 130px;
+
+}
+#add_name,#add_kb,.creatPop .add .cont select{
+    border-radius:3px;
+    border:1px solid #c9c9c9;
+    height: 26px;
+    line-height: 26px;
+    width:100%;
+    padding:0;
+    margin-bottom:12px;
+}
+.creatPop .add .cont select{
+    height: 28px;
+    line-height: 28px;
+    margin-top:12px;
+ }
+#creatNewMb{
+    text-align: right;
+}
+#creatNewMb a{
+    color:#3388ff;
+    text-decoration: underline;
+    font-size: 16px;
+}
+.creatPop .nextBtn{
+    padding:8px 26px;
+    background: #3388ff;
+    color:#ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 190px;
+}
+.fl{
+    float:left;
+}
+/*detail*/
+#Right{
+    min-height:538px;
+
+}
+#Right .center,.rightMain_con{
+    background: #edeef0;
+}
+.rightMain_con{
+    min-height: 536px;
+}
+.knowledgeCon{
+    margin:16px;
+    background: #ffffff;
+    min-height:460px;
+    padding:20px
+}
+.knowledgeCon_tit{
+    margin-bottom: 22px;
+}
+.knowledgeCon_tit input,.knowledgeCon_tit select{
+    border-radius:3px;
+    border:1px solid #c9c9c9;
+    height: 26px;
+    line-height: 26px;
+    min-width: 168px;
+    padding-left:5px;
+    margin-right:10px;
+}
+.knowledgeCon_tit select{
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+}
+.knowledgeCon_cont_tit{
+    width:97%;
+    position: relative;
+}
+.knowledgeCon_cont_tit .title{
+    color:#3388ff;
+
+}
+.knowledgeCon_cont_tit .dropdown_tit,.knowledgeCon_cont_tit .dropdown_tit span{
+    height: 30px;
+    line-height: 30px;
+    color:#3388ff;
+}
+.addFirstBtn{
+    float: right;
+}
+.addFirstBtn .addBtn,.addSecondBtn .addBtn{
+    float:right;
+    padding:7px;
+    color:#ffffff;
+    background:#3388ff ;
+}
+.knowledgeCon_cont_main{
+    /*width:97%;*/
+
+}
+.knowledgeCon_cont_mainHead,.knowledgeCon_cont_tit{
+    height: 30px;
+    background: #eaf3ff;
+    margin-top:8px;
+    position:relative;
+
+}
+.knowledgeCon_cont_main .chose_city{
+
+    float:left;
+}
+.knowledgeCon_cont_main .chose_city .title{
+    padding-left:16px;
+    padding-right: 22px;
+}
+.knowledgeCon_cont_main .chose_city select,.knowledgeCon_cont_tit select{
+    border-radius:3px;
+    border:1px solid #c9c9c9;
+    height: 22px;
+    line-height: 22px;
+    min-width: 90px;
+    padding-left:5px;
+    margin-right:10px;
+    margin-top:4px;
+}
+.operation{
+    float:right;
+}
+.operation span{
+    width:25px;
+    height: 25px;
+    margin-top:3px;
+    margin-right: 4px;
+    /*display: inline-block;*/
+    float:left;
+    cursor: pointer;
+}
+.operation .pcIcon,.operation .megIcon{
+    width:21px;
+    background: url("../images/pc.png") 0 3px  no-repeat;
+}
+.operation .pcIcon:hover{
+    background: url("../images/pc2.png") 0 3px no-repeat;
+}
+.operation .megIcon{
+    background: url("../images/meg.png") 0 3px no-repeat;
+}
+.operation .megIcon:hover{
+    background: url("../images/meg2.png") 0 3px no-repeat;
+}
+.operation .fetionIcon{
+    width:21px;
+    background: url("../images/fetion.png") 0 2px no-repeat;
+}
+.operation .fetionIcon:hover{
+    background: url("../images/fetion2.png") 0 2px no-repeat;
+}
+.operation .delLevelIcon{
+    background: url("../images/delLevel.png") no-repeat;
+}
+.addIcon{
+    position: absolute;
+    right: -3%;
+    top:2px;
+    width:24px;
+    height: 24px;
+    background: url("../images/add_btn.png") no-repeat;
+}
+
+.editor{
+    min-height: 200px;
+    margin:10px 0;
+}
+.knowledgeCon_cont_main {
+    position:relative;
+    width:97%;
+}
+.knowledgeCon_cont .listDel{
+    position:absolute;
+    right:-3%;
+    top:34px;
+    background-color: #3388ff;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    padding:7px;
+    text-align: center;
+    width: 15px;
+}
+.operationBtn{
+    text-align: center;
+}
+.operationBtn button{
+    padding:7px;
+    margin-right: 10px;
+    background-color: #3388ff;
+    color: #fff;
+}
+.selectReplace{
+    display: inline-block;
+    padding:10px 8px;
+    /*border:1px solid #c9c9c9;*/
+    margin-right: 10px;
+}
+/*局部操作*/
+.editorWrap{
+    position: relative;
+    width: 97%;
+    min-height: 100px;
+}
+.partOperation{
+    position: absolute;
+    right: -3%;
+    top:0;
+}
+.partOperation span{
+    width: 24px;
+    height: 24px;
+    display:block;
+    margin-bottom: 5px;
+}
+.partOperation .previewIcon{
+    background: url("../images/previewIxon.png")no-repeat;
+}
+.partOperation .saveIcon{
+    background: url("../images/saveIcon.png")no-repeat;
+}
+.partOperation .pushlishIcon{
+    background: url("../images/pushIcon.png")no-repeat;
+}
+/*ztree*/
+#rMenu{
+    position:absolute;background-color:white;visibility: hidden;border:1px solid silver ;
+}
+#rMenu ul li{height:35px;line-height:35px;border-bottom:1px solid #666;}
+#rMenu ul li:hover{background: blue;cursor: pointer}

@@ -1,0 +1,25 @@
+* {
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+.logo {
+    margin-top: 150px;
+    width: 300px;
+}
+.logo img {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    float: left;
+}
+.logo h1 {
+    padding: 10px;
+    font-size: 24px;
+    float: left;
+}
+.clears {
+    clear: both;
+    height: 0;
+}

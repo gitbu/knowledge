@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全网统一知识库</title>
+    <link rel="stylesheet" href="../css/search_list_common.css">
+    <link rel="stylesheet" href="../css/search_list_item.css">
+    <script src="../js/jquery-1.5.2.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/search_list_item.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="kb_header_logo">
+        <a href="/search.html">
+        <img src="../images/logo_icon.png" alt="logo">
+        <h1>全网统一知识库</h1>
+        </a>
+        <div class="clears"></div>
+    </div>
+
+    <div class="kb_area_box">
+        <div id="kb_provinces">
+            <div class="kb_provinces_btn">
+                <span class="provinces_span" id="provinces_span">江苏</span>
+                <i class="arrow_down"></i>
+            </div>
+            <ul class="provinces_list" style="display: none;"><li>江苏</li></ul>
+        </div>
+        <div id="kb_city">
+            <div class="kb_city_btn on">
+                <span class="city_span" id="city_span">淮安</span>
+                <i class="arrow_up"></i>
+            </div>
+            <ul class="city_list" style="display: none;"></ul>
+        </div>
+        <div class="clears"></div>
+    </div>
+    <!--search-->
+    <div id="header_search">
+        <div class="search_wraper">
+            <div class="search_inputbox">
+                <input type="text" id="search" autocomplete="off" class="ac_input">
+            </div>
+        </div>
+        <button class="search_btn" type="submit">搜索</button>
+    </div>
+    <!--login_admin-->
+    <div class="login_user">
+        <a href="javascript:;" id="login_username">您好,jiangsuTest</a>
+        <a href="javascript:;" name="loginOut">退出</a>
+    </div>
+</div>
+<div class="filter_sort_bar">
+    <div class="filter_sort_way">
+        <!-- <a class="filter_sort_default on">点击量</a>-->
+        <a class="filter_sort_new on">所有</a>
+    </div>
+    <div class="filter_page_area">
+        <a href="javascript:;" class="filter_prev_btn">
+            &lt;
+        </a>
+        <a class="filter_pageNum">
+                              <span class="current">
+                                  <strong id="filter_nowPage">1</strong>
+                                  /
+                                  <strong id="filter_totalPage">1</strong>
+                              </span>
+        </a>
+        <a href="javascript:;" class="filter_next_btn">
+            &gt;
+        </a>
+    </div>
+    <div class="clears"></div>
+
+</div>
+<div class="filter_categoryMain clearfix">
+    <div class="category_Left">
+    <div class="filter_categoryMain">
+        <div class="category_Left" style="margin-right: 35px;">
+        <div class="detail_cont">
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="category_Right">
+    </div>
+</div>
+</body>
+</html>

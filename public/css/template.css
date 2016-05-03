@@ -1,0 +1,739 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Your Name (you@example.org)
+ * @date    2014-11-15 10:12:41
+ * @version $Id$
+ */
+
+
+
+
+
+/*公用样式开始*/
+body{
+	/*background:#eee;*/
+	font-family:"微软雅黑";
+	color:#535353;
+	/*margin-bottom:400px;*/
+}
+.tit{
+	min-width:140px;
+	float: left;
+}
+.center{
+	float: left;
+}
+.box{
+	padding:20px;
+	background:#fff;
+	margin-bottom: 10px;
+	border-radius:6px;
+}
+.box .spans{
+	display: inline-block;
+	width: 120px;
+	vertical-align: top;
+}
+.box .text{
+	width: 360px;
+	height:40px;
+	border:1px solid #d2d2d2;
+	border-radius:6px;
+}
+.box textarea{
+	width: 320px;
+	height:120px;
+	border:1px solid #d2d2d2;
+	border-radius:6px;
+	resize:none;
+	padding:10px;
+}
+.Floaf{
+	float: left;
+}
+/*公用样式结束*/
+
+
+
+
+
+
+/*通知开始*/
+
+#Notice .Internal_instructions_span{
+	float: left;
+	width: 144px;
+}
+/*#Notice .Internal_instructions_cen{
+	float: left;
+}
+#Notice .Internal_instructions_sm{
+	padding:10px;
+}
+#Notice .Internal_instructions_sm input{
+	width:350px;
+	height:36px;
+	padding:0 5px;
+	border:1px solid #d2d2d2;
+	border-radius:4px;
+}
+#Notice .Internal_instructions_sm span{
+	vertical-align: top;*/
+#Notice .div_1{
+    border:1px solid #d2d2d2;
+    border-radius:4px;
+}
+
+
+
+/*通知结束*/
+
+
+
+/*停售说明开始*/
+#stop_statement .hdqy{
+    width: 720px;
+    border:1px solid #d2d2d2;
+    border-radius:6px;
+    display: inline-block;
+}
+#stop_statement .hdqy .hdqy_t{
+    height:44px;
+    /*border-bottom:1px solid #ff4b4b;*/
+    line-height: 44px;
+}
+#stop_statement .hdqy .hd_sf{
+    border-top: 1px solid #eee;
+    margin-top: -1px;
+    padding-left: 18px;
+}
+#stop_statement #tables{
+    display: none;
+    margin-top: 5px;
+    font-size: 14px;
+}
+#stop_statement #tables td{
+    width: 72px;
+    height: 34px;
+}
+#stop_statement #beij,#shanghai{
+    display: none;
+}
+#stop_statement #beij td{
+    width: 97px;
+    height: 34px;
+}
+#stop_statement .stop_statement_Customer{
+	display:inline-block;
+}
+#stop_statement .stop_statement_Customer label{
+	margin-right:30px;
+}
+#Customer9{
+	display:none;
+}
+/*停售说明结束*/
+
+
+
+/*开放对象开始*/
+#Objects .hdqy{
+    width: 720px;
+    border:1px solid #d2d2d2;
+    border-radius:6px;
+    display: inline-block;
+}
+#Objects#Objects .hdqy .hdqy_t{
+    height:44px;
+    /*border-bottom:1px solid #ff4b4b;*/
+    line-height: 44px;
+}
+#Objects .hdqy .hd_sf{
+    border-top: 1px solid #eee;
+    margin-top: -1px;
+    padding-left: 18px;
+}
+#tablex{
+    /*display: none;*/
+    margin-top: 5px;
+    font-size: 14px;
+}
+#tablex td{
+    width: 72px;
+    height: 34px;
+}
+#Objects table td{
+	width:84px;
+	height:30px;
+}
+#Objects .Objects_Customers{
+	display:inline-block;
+}
+#Objects .Objects_Customers label{
+	margin-right:30px;
+}
+#Objectsbj,#tablex,#Customers9x{
+	display:none;
+}
+
+/*开放对象结束*/
+
+
+
+
+
+/*资费标准开始*/
+#Rates .Rates_cen{
+	padding:5px;
+	display:inline-block;
+}
+#BOSS_tab{
+	display:inline-block;
+}
+#BOSS_tab li{
+	width: 144px;
+	height:32px;
+	border:1px solid #d2d2d2;
+	border-radius:4px 4px 0 0;
+	float: left;
+	margin-right:2px;
+	text-align:center;
+	line-height:32px;
+}
+#Add{
+	width: 40px;
+	height:32px;
+	border:1px solid #d2d2d2;
+	border-radius:4px 4px 0 0;
+	float: left;
+	margin-right:2px;
+	text-align:center;
+	line-height:32px;
+	background:#eee;
+	font-size:22px;
+}
+#BOSS_tab .Boss_cen{
+	border: 1px solid #d2d2d2;
+	border-radius: 0 0 6px 6px;
+    height: 192px;
+    padding: 15px;
+    width: 420px;
+}
+#BOSS_tab .Boss_cen span{
+	display: inline-block;
+    width: 112px;
+}
+#BOSS_tab .Boss_cen input{
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    height: 32px;
+    padding: 2px 5px;
+    width: 230px;
+}
+#charges .charges_span{
+	width: 124px;
+}
+#charges .charges_Cen li{
+	width: 110px;
+	height:36px;
+	border:1px solid #d2d2d2;
+	border-radius:4px 4px 0 0;
+	float: left;
+	text-align:center;
+	line-height: 36px;
+}
+#charges_Cen_1,#charges_Cen_2,
+#charges_Cen_3,#charges_Cen_4{
+	padding:10px;
+	width:426px;
+	border:1px solid #d2d2d2;
+	border-radius: 0 0 6px 6px;
+}
+#charges_Cen_1 .quotation,
+#charges_Cen_2 .quotation,
+#charges_Cen_3 .quotation,
+#charges_Cen_4 .quotation{
+	display:inline-block;
+	width: 60px;
+	vertical-align: top;
+}
+#charges_Cen_1 .call_Type,
+#charges_Cen_2 .call_Type,
+#charges_Cen_3 .call_Type,
+#charges_Cen_4 .call_Type,
+#Related_instructions .call_Type{
+	border:1px solid #d2d2d2;
+	margin-top:10px;
+	padding: 10px;
+	border-radius:6px;
+}
+#charges_Cen_1 .call_Type td{
+	width: 100px;
+	height:24px;
+}
+#charges_Cen_1 .call_yy label{
+	margin-right:15px;
+}
+#charges_Cen_1 .mar_top{
+	margin-top:10px;
+}
+#charges_Cen_1 .Limiting_conditions_span{
+	display:inline-block;
+	margin:10px 10px 0 0;
+	vertical-align: top;
+}
+
+
+
+
+
+#charges_Cen_2 .charges_Cen_sms label,
+#charges_Cen_3 .charges_Cen_dq label,
+#charges_Cen_3 .charges_Cen_ll label{
+	margin-right:15px;
+}
+#charges_Cen_3 .charges_Cen_dq{
+	margin-top:10px;
+}
+#charges_Cen_3 .charges_Cen_sj td{
+	width:68px;
+	height:24px;
+}
+#charges_Cen_4 .charges_Cen_xms_tit{
+	margin-left:22px;
+}
+
+
+
+#Administrative_areas{
+	margin-top:10px;
+}
+#Administrative_areas .Administrative_areas_span{
+	float: left;
+	width:124px;
+}
+#Administrative_areas .Administrative_areas_div{
+
+    float: left;
+
+}
+/*#Administrative_areas .Administrative_areas_div div{
+	margin-top:10px;
+}*/
+#Administrative_areas .Administrative_areas_div div span{
+    display: inline-block;
+    width: 62px;
+    vertical-align: top;
+}
+#Rates .Free_content{
+	margin-top:10px;
+}
+
+#charges_Cen_2,#charges_Cen_3,
+#charges_Cen_4,#Limiting_conditions15a,
+#Limiting_conditions16a,#charges_Cen_sj10,
+#charges_Cen_xms4{
+	display:none;
+}
+
+
+/*资费标准结束*/
+
+
+
+
+/*可办预加资费*/
+
+#Can_do span{
+	display: inline-block;
+    width: 124px;
+    vertical-align: top;
+}
+
+
+
+
+
+/*相关说明开始*/
+
+#Related_instructions .Related_instructions_span{
+	float: left;
+	width: 124px;
+}
+#Related_instructions .Related_instructions_div{
+	float: left;
+}
+#Related_instructions .Related_instructions_div .call_Type label{
+	margin-right:13px;
+}
+#Related_instructions .Related_instructions_div .kcfs_text{
+	margin:10px 22px;
+}
+#Related_instructions .Related_instructions_divx{
+	margin-top:10px;
+}
+#Related_instructions .Related_instructions_divx span{
+	display:inline-block;
+	width: 124px;
+	vertical-align:top;
+}
+#Related_instructions5{
+	display:none;
+}
+/*相关说明结束*/
+
+
+
+
+
+/*办理说明开始*/
+
+#ToHandleHhe .ToHandleHhe_span{
+	float: left;
+	width:124px;
+}
+#ToHandleHhe_div{
+	float:left;
+}
+
+
+/*
+
+#ToHandleHhe_div .ToHandleHhe_div_spans{
+	float: left;
+	width: 100px;
+}
+#ToHandleHhe_div .ToHandleHhe_div_d{
+	float: left;
+}
+#ToHandleHhe_div .ToHandleHhe_div_d label{
+	margin-right:110px;
+}
+#ToHandleHhe .call_Type{
+	border:1px solid #d2d2d2;
+	padding: 10px;
+	border-radius:6px;
+	width:340px;
+}
+#ToHandleHhe .ToHandleHhe_ywmc{
+	margin-top:10px;
+}
+#ToHandleHhe .ToHandleHhe_ywmc span{
+	float: left;
+	width: 100px;
+}
+#ToHandleHhe .ToHandleHhe_ywmc textarea
+{
+	float: left;
+}
+#ToHandleHhe .ToHandleHhe_ywmc .ToHandleHhe_table
+{	float: left;
+	border:1px solid #d2d2d2;
+	padding:10px;
+	border-radius:6px;
+}
+
+#ToHandleHhe_div .ToHandleTheWay td{
+	height: 22px;
+    width: 85px;
+}
+#ToHandleTheWay_text{
+	width: 318px;
+	height:110px;
+	margin-top:10px;
+}
+
+#ToHandleHhe_div .ToHandleTheWayx td{
+	height: 22px;
+    width: 68px;
+}
+
+
+#Operation_typex{
+	width: 340px;
+}
+#Operation_typex .labels{
+	margin-right:15px;
+}
+
+
+
+#TheCustomerType{
+	border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    height: 34px;
+    margin-top: 10px;
+    padding-top: 14px;
+    width: 340px;
+}
+
+#TheCustomerType input{
+	margin-left:2px;
+}
+
+
+
+
+#Certificate{
+	border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 14px 0 14px 10px;
+    width: 330px;
+}
+
+
+
+#Certificate td{
+	width: 166px;
+	height:34px;
+	border:1;
+}
+#Certificate_titx{
+	width: 298px;
+	height:78px;
+}
+
+#Time_for_that{
+	width: 340px;
+}
+#Time_for_that textarea{
+	width:320px;
+}
+#Time_for_that td{
+	height:24px;
+}
+#Time_for_that td label{
+	margin-right: 10px;
+}
+
+
+
+#TheFailureTime td,
+#EffectOfTime td{
+	height:24px;
+	width: 170px;
+}
+
+#TheFailureTime textarea,
+#EffectOfTime textarea{
+	height: 110px;
+    width: 318px;
+}
+#ToHandleTheWay_text1,#ToHandleTheWay_text{
+	display:none;
+}
+#TheCustomerType,#Time_for_that7,
+#Certificate,#Certificate_titx61,#EffectOfTime10,
+#TheFailureTime10{
+	display:none;
+}*/
+
+/*办理说明结束*/
+
+
+
+/*内部说明开始*/
+
+.Internal_instructions_cen{
+	float: left;
+}
+
+#The_q_a .Internal_instructions_span,
+#The_q_asl .Internal_instructions_span,
+#The_q_ax .Internal_instructions_span,
+#complaints .Internal_instructions_span,
+#Internal_instructions .Internal_instructions_span{
+	float: left;
+	width: 124px;
+}
+.Internal_instructions_cen .Internal_instructions_sm{
+	width: 494px;
+	border:1px solid #d2d2d2;
+	border-radius:0 0 6px 6px;
+}
+.Internal_instructions_cen li{
+	float: left;
+	width: 80px;
+	height:34px;
+	border:1px solid #d2d2d2;
+	border-radius:6px 6px 0 0;
+	text-align:center;
+	line-height:34px;
+}
+#Internal_instructions_tj{
+	float: left;
+	width: 40px;
+	height:34px;
+	border:1px solid #d2d2d2;
+	border-radius:6px 6px 0 0;
+	text-align:center;
+	line-height:34px;
+	background:#eee;
+	font-size: 20px;
+	text-decoration: none;
+	color:#999;
+}
+.Internal_instructions_smnb{
+	padding:10px;
+}
+.Internal_instructions_smnb p{
+	/*text-decoration: underline;*/
+	height:34px;
+	border-bottom: 1px solid red;
+	line-height:34px;
+    margin-bottom: 10px;
+}
+/*.Internal_instructions_smnb div{
+	margin-top:10px;
+}*/
+.Internal_instructions_smnb input,
+#The_q_a input,#The_q_asl input,#The_q_ax .inputx,#complaints input{
+	border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    height: 34px;
+    padding: 0 5px;
+    width: 330px;
+}
+.Internal_instructions_smnb span,
+#The_q_a .Internal_instructions_sm span,
+#The_q_asl .Internal_instructions_sm span,
+#The_q_ax .Internal_instructions_sm span{
+	display: inline-block;
+    margin-left: 35px;
+    vertical-align: top;
+    width: 60px;
+}
+#The_q_a .Internal_instructions_sm div,
+#The_q_ax .Internal_instructions_sm div,
+#The_q_asl .Internal_instructions_sm div,
+#complaints .Internal_instructions_sm div{
+	padding:10px 0;
+}
+#complaints .Internal_instructions_sm div{
+	padding-left: 70px;
+}
+
+
+
+#The_q_ax .External_propaganda{
+	border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    display: inline-block;
+    width: 360px;
+    padding-bottom: 10px;
+}
+#The_q_ax .External_propaganda table{
+	margin-left: 5px;
+}
+#The_q_ax .External_propaganda td{
+	width: 89px;
+	height:22px;
+}
+#The_q_ax .External_propaganda textarea{
+	margin-left:10px;
+}
+/*内部说明结束*/
+
+/*module6开始*/
+.M6_nav{
+    height: 40px;
+    width: 700px;
+}
+
+.M6_nav li{
+    float: left;
+    height: 40px;
+    padding:0 5px;
+    list-style: none;
+    border:1px solid #d2d2d2;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.M6_nav li a.close{
+    background: none repeat scroll 0 0 #eee;
+    border-radius: 7px;
+    display: block;
+    height: 14px;
+    right: 2px;
+    line-height: 14px;
+    position: absolute;
+    top: 2px;
+    width: 14px;
+    font-family:Arial;
+    text-decoration:none;
+    color:#0d55ff;
+}
+
+.M6_nav li.on{
+    border-bottom:1px solid red;
+}
+.M6_nav li.btn{
+    height: 40px;
+    width: 50px;
+    list-style: none;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    background: #eee;
+    cursor:pointer;
+    border:0;
+}
+
+.M6_cen{
+    width: 560px;
+    border:1px solid #d2d2d2;
+    padding:25px;
+    margin-top: 1px;
+    border-radius:6px;
+}
+.M6_cen li{
+    list-style: none;
+}
+.M6_cenl{
+    width: 128px;
+    height: 40px;
+    padding-right: 25px;
+    text-align: right;
+    line-height: 40px;
+}
+.M6_cen dl{
+    margin-top: 18px;
+}
+.M6_cen dt,
+.M6_cen dd{
+    float: left;
+}
+.M6_cen .zi{
+    width: 330px;
+    height: 34px;
+    border:1px solid #d2d2d2;
+    border-radius: 4px;
+}
+
+/*module6结束*/
+
+
+ /*外部宣传*/
+#External_propaganda17{
+	display:none;
+}
+#xuanchuandd{
+	padding: 0 10px 10px 10px;
+}
+#xuanchuandd label{
+	margin: 10px 10px 0 0;
+	display: inline-block;
+
+}
